@@ -20,7 +20,17 @@
 
 **[Vet-Clinic]** is an implementation of PostgreSQL has been implemented to create a database of animals for a veterinarian clinic, along with a set of queries to look into the data stored in the database.
 
-<a href='./queries.png' target='blank'>Screenshot of the queries<a>
+**Screenshots**
+Day 1
+<a href='./screenshots/day1/queries.png' target='blank'>Task 1<a>
+
+Day 2
+<a href='./screenshots/day2/queries-day2-0.png' target='blank'>Task 0<a>
+<a href='./screenshots/day2/queries-day2-1.png' target='blank'>Task 1<a>
+<a href='./screenshots/day2/queries-day2-2.png' target='blank'>Task 2<a>
+<a href='./screenshots/day2/queries-day2-3.png' target='blank'>Task 3<a>
+<a href='./screenshots/day2/queries-day2-4.png' target='blank'>Task 4<a>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
