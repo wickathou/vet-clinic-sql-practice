@@ -8,8 +8,6 @@ insert into animals(name,date_of_birth, weight_kg,neutered,escape_attempts) valu
 
 -- Day 2
 
-alter table animals add column species varchar(100) ;
-
 begin;               
 insert into animals(name,date_of_birth, weight_kg,neutered,escape_attempts) values
 ('Charmander','2020-02-08', -11,false,0),

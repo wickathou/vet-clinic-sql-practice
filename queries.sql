@@ -13,17 +13,20 @@ begin;
 update animals set species = 'unspecified';
 select * from animals;
 rollback;
+select * from animals;
 
 begin;
 update animals set species='digimon' where name like '%mon';
 update animals set species='pokemon' where species is null;
 select * from animals;
 commit;
+select * from animals;
 
 begin;
 delete from animals;
 select * from animals;
 rollback;
+select * from animals;
 
 begin;
 delete from animals where date_of_birth > '2022-01-01';
@@ -35,6 +38,7 @@ select * from animals;
 update animals set weight_kg = weight_kg*(-1) where weight_kg < 0;
 select * from animals;
 commit;
+select * from animals;
 
 -- Questions:
 -- How many animals are there?

@@ -24,8 +24,8 @@
 Day 1
 <a href='./screenshots/day1/queries.png' target='blank'>Task 1<a>
 
-
 Day 2
+<a href='./screenshots/day2/queries-day2-0.png' target='blank'>Task 0<a>
 <a href='./screenshots/day2/queries-day2-1.png' target='blank'>Task 1<a>
 <a href='./screenshots/day2/queries-day2-2.png' target='blank'>Task 2<a>
 <a href='./screenshots/day2/queries-day2-3.png' target='blank'>Task 3<a>

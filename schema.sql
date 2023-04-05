@@ -1,3 +1,4 @@
+-- Day 1
 -- Creating database
 
 createdb vet_clinic
@@ -17,3 +18,6 @@ alter table animals alter column id set not null;
 
 alter table animals alter column id add generated always as identity;
 
+-- Day 2
+
+alter table animals add column species varchar(100) ;
