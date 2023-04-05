@@ -33,14 +33,14 @@ Day 2
 
 Day 3
 
-<a href='./screenshots/day2/queries-day3-1.png' target='blank'>Task set 1<a>
+<a href='./screenshots/day3/queries-day3-1.png' target='blank'>Task set 1<a>
   - What animals belong to Melody Pond?
   - List of all animals that are pokemon (their type is Pokemon).
   - List all owners and their animals, remember to include those that don't own any animal.
   - How many animals are there per species?
   - List all Digimon owned by Jennifer Orwell.
 
-<a href='./screenshots/day2/queries-day3-2.png' target='blank'>Task set 2<a>
+<a href='./screenshots/day3/queries-day3-2.png' target='blank'>Task set 2<a>
   - List all animals owned by Dean Winchester that haven't tried to escape.
   - Who owns the most animals?
 
