@@ -36,8 +36,8 @@ select * from owners;
 
 begin;
 insert into species (name) values
-vet_clinic-*# ('Pokemon'),
-vet_clinic-*# ('Digimon');
+('Pokemon'),
+('Digimon');
 select * from species;
 commit;
 select * from species;

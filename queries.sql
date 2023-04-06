@@ -111,20 +111,25 @@ where species.name = 'Pokemon';
 
 -- Owner's animal count 
 
-select
-owners.fullname, count(animals.name)
+vet_clinic=# select
+owners.fullname, animals.name
 from owners
-left join animals on animals.owner_id = owners.id group by owners.fullname;
+left join animals on animals.owner_id = owners.id;
 
---     fullname     | count 
--- -----------------+-------
---  Dean Winchester |     2
---  Bob             |     2
---  Sam Smith       |     1
---  Jodie Whittaker |     0
---  Jennifer Orwell |     2
---  Melody Pond     |     3
--- (6 rows)
+--     fullname     |    name    
+-- -----------------+------------
+--  Sam Smith       | Agumon
+--  Jennifer Orwell | Pikachu
+--  Jennifer Orwell | Gabumon
+--  Bob             | Plantmon
+--  Bob             | Devimon
+--  Melody Pond     | Squirtle
+--  Melody Pond     | Charmander
+--  Melody Pond     | Blossom
+--  Dean Winchester | Angemon
+--  Dean Winchester | Boarmon
+--  Jodie Whittaker | 
+-- (11 rows)
 
 
 -- Count of animals per species 
