@@ -47,3 +47,19 @@ add constraint owners_fk
 foreign key (owner_id)
 references owners(id)
 on delete cascade;
+
+-- Day 4
+
+vet_clinic=# create table vets (
+vet_clinic(# id serial primary key,
+vet_clinic(# name varchar(100),
+vet_clinic(# age int,
+vet_clinic(# date_of_graduation date);
+
+vet_clinic=# create table specializations (
+vet_clinic(# vet_id int references vets(id),
+vet_clinic(# specie_id int references species(id));
+
+vet_clinic=# create table visits (
+vet_id int references vets(id),
+animal_id int references animals(id));
