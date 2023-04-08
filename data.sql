@@ -103,10 +103,10 @@ begin;
 
 insert into specializations
 (vet_id,specie_id) values
-(5,1),
-(7,1),
-(7,2),
-(8,2);
+((select id from vets where name like 'William%'),(select id from species where name like 'Pokemon')),
+((select id from vets where name like 'Stephanie%'),(select id from species where name like 'Pokemon')),
+((select id from vets where name like 'Stephanie%'),(select id from species where name like 'Digimon')),
+((select id from vets where name like 'Jack%'),(select id from species where name like 'Digimon'));
 
 select * from specializations;
 --  vet_id | specie_id 
@@ -133,26 +133,26 @@ begin;
 
 
 insert into visits (animal_id,vet_id,date_of_visit) values
-(1,5,'2020-5-24'),
-(1,7,'2020-07-22'),
-(2,8,'2021-02-02'),
-(5,6,'2020-01-05'),
-(5,6,'2020-3-8'),
-(5,6,'2020-03-14'),
-(3,7,'2021-05-4'),
-(9,8,'2021-2-24'),
-(7,6,'2019-12-21'),
-(7,5,'2020-8-10'),
-(7,6,'2021-4-7'),
-(10,7,'2019-9-29'),
-(8,8,'2020-10-3'),
-(8,8,'2020-11-4'),
-(4,6,'2019-1-24'),
-(4,6,'2019-5-15'),
-(4,6,'2020-2-27'),
-(4,6,'2020-8-3'),
-(6,7,'2020-5-24'),
-(6,5,'2021-1-11');
+((select id from animals where name like 'Agumon%'),(select id from vets where name like 'William%'),'2020-5-24'),
+((select id from animals where name like 'Agumon%'),(select id from vets where name like 'Stephanie%'),'2020-07-22'),
+((select id from animals where name like 'Gabumon%'),(select id from vets where name like 'Jack%'),'2021-02-02'),
+((select id from animals where name like 'Pikachu%'),(select id from vets where name like 'Maisy%'),'2020-01-05'),
+((select id from animals where name like 'Pikachu%'),(select id from vets where name like 'Maisy%'),'2020-3-8'),
+((select id from animals where name like 'Pikachu%'),(select id from vets where name like 'Maisy%'),'2020-03-14'),
+((select id from animals where name like 'Devimon%'),(select id from vets where name like 'Stephanie%'),'2021-05-4'),
+((select id from animals where name like 'Charmander%'),(select id from vets where name like 'Jack%'),'2021-2-24'),
+((select id from animals where name like 'Plantmon%'),(select id from vets where name like 'Maisy%'),'2019-12-21'),
+((select id from animals where name like 'Plantmon%'),(select id from vets where name like 'William%'),'2020-8-10'),
+((select id from animals where name like 'Plantmon%'),(select id from vets where name like 'Maisy%'),'2021-4-7'),
+((select id from animals where name like 'Squirtle%'),(select id from vets where name like 'Stephanie%'),'2019-9-29'),
+((select id from animals where name like 'Angemon%'),(select id from vets where name like 'Jack%'),'2020-10-3'),
+((select id from animals where name like 'Angemon%'),(select id from vets where name like 'Jack%'),'2020-11-4'),
+((select id from animals where name like 'Boarmon%'),(select id from vets where name like 'Maisy%'),'2019-1-24'),
+((select id from animals where name like 'Boarmon%'),(select id from vets where name like 'Maisy%'),'2019-5-15'),
+((select id from animals where name like 'Boarmon%'),(select id from vets where name like 'Maisy%'),'2020-2-27'),
+((select id from animals where name like 'Boarmon%'),(select id from vets where name like 'Maisy%'),'2020-8-3'),
+((select id from animals where name like 'Blossom%'),(select id from vets where name like 'Stephanie%'),'2020-5-24'),
+((select id from animals where name like 'Blossom%'),(select id from vets where name like 'William%'),'2021-1-11');
 
 select * from visits ;
 --  vet_id | animal_id | date_of_visit 
