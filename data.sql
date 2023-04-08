@@ -18,3 +18,50 @@ insert into animals(name,date_of_birth, weight_kg,neutered,escape_attempts) valu
 ('Blossom','1998-10-13',17,true,3),
 ('Ditto','2022-05-14',22,true,4);
 commit;
+
+-- Day 3
+
+begin;
+insert into owners (
+fullname,age) values
+('Sam Smith',34),
+('Jennifer Orwell',19),
+('Bob', 45),
+('Melody Pond', 77),
+('Dean Winchester', 14),
+('Jodie Whittaker', 38);
+select * from owners;
+commit;
+select * from owners;
+
+begin;
+insert into species (name) values
+('Pokemon'),
+('Digimon');
+select * from species;
+commit;
+select * from species;
+
+begin;
+update animals set species_id=2 where name like '%mon';
+select * from animals;
+commit;
+select * from animals;
+
+begin;
+update animals set species_id=1 where species_id is null;
+select * from animals;
+commit;
+select * from animals;
+
+begin;
+select * from owners;
+update animals set owner_id=1 where name='Agumon' returning *;
+update animals set owner_id=2 where name='Gabumon' and name='Pikachu' returning *;
+update animals set owner_id=2 where name='Gabumon' or name='Pikachu' returning *;
+update animals set owner_id=3 where name='Plantmon' or name='Devimon' returning *;
+update animals set owner_id=4 where name='Charmander' or name='Squirtle' or name='Blossom' returning *;
+update animals set owner_id=5 where name='Angemon' or name='Boarmon' returning *;
+select * from animals;
+commit;
+select * from animals;

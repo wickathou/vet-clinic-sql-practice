@@ -71,3 +71,148 @@ select species,min(weight_kg),max(weight_kg) from animals group by species;
 -- Answer: Pokemon(3), Digimon(Null)
 -- Query:
 select species,avg(escape_attempts) from animals where date_part('year',date_of_birth) between 1990 and 2000 group by species;
+
+
+-- Day 3
+
+
+-- Animals owned by Melody Pond
+
+select
+owners.fullname, animals.name
+from animals
+join owners on animals.owner_id = owners.id
+where owners.fullname = 'Melody Pond';
+
+--   fullname   |    name    
+-- -------------+------------
+--  Melody Pond | Squirtle
+--  Melody Pond | Charmander
+--  Melody Pond | Blossom
+-- (3 rows)
+
+
+-- Animals who are Pokemon 
+
+select
+species.name, animals.name
+from animals
+join species on animals.species_id = species.id
+where species.name = 'Pokemon';
+
+--   name   |    name    
+-- ---------+------------
+--  Pokemon | Squirtle
+--  Pokemon | Charmander
+--  Pokemon | Blossom
+--  Pokemon | Pikachu
+-- (4 rows)
+
+
+-- Owner's animal count 
+
+vet_clinic=# select
+owners.fullname, animals.name
+from owners
+left join animals on animals.owner_id = owners.id;
+
+--     fullname     |    name    
+-- -----------------+------------
+--  Sam Smith       | Agumon
+--  Jennifer Orwell | Pikachu
+--  Jennifer Orwell | Gabumon
+--  Bob             | Plantmon
+--  Bob             | Devimon
+--  Melody Pond     | Squirtle
+--  Melody Pond     | Charmander
+--  Melody Pond     | Blossom
+--  Dean Winchester | Angemon
+--  Dean Winchester | Boarmon
+--  Jodie Whittaker | 
+-- (11 rows)
+
+
+-- Count of animals per species 
+
+select
+species.name, count(animals.name)
+from species
+join animals on species.id = animals.species_id group by species.name;
+
+--   name   | count 
+-- ---------+-------
+--  Pokemon |     4
+--  Digimon |     6
+-- (2 rows)
+
+
+-- Digimon owned by Jennifer
+
+select
+animals.name, owners.fullname as owner, species.name as specie              
+from animals
+join owners on animals.owner_id = owners.id
+join species on species.id = animals.species_id
+where owners.fullname like 'Jennifer%' and species.name= 'Digimon'
+group by owners.fullname, animals.name, species.name;
+
+--   name   |      owner      | specie  
+-- ---------+-----------------+---------
+--  Gabumon | Jennifer Orwell | Digimon
+-- (1 row)
+
+
+-- List of animals owned by Dean, which haven't tried to escape
+
+select                
+animals.name, owners.fullname as owner, animals.escape_attempts
+from animals
+join owners on animals.owner_id = owners.id
+where owners.fullname like 'Dean%' and animals.escape_attempts=0;
+
+--  name | owner | escape_attempts 
+-- ------+-------+-----------------
+-- (0 rows)
+
+
+-- Verification 
+select
+animals.name, owners.fullname as owner, animals.escape_attempts
+from animals
+join owners on animals.owner_id = owners.id
+where owners.fullname like 'Dean%' and animals.escape_attempts>0;
+
+--   name   |      owner      | escape_attempts 
+-- ---------+-----------------+-----------------
+--  Boarmon | Dean Winchester |               7
+--  Angemon | Dean Winchester |               1
+-- (2 rows)
+
+
+-- Who owns the most animals
+
+select
+owners.fullname, count(animals.name)
+into table ownership_count from owners
+left join animals on animals.owner_id = owners.id group by owners.fullname;
+select * from ownership_count ;
+
+--     fullname     | count 
+-- -----------------+-------
+--  Dean Winchester |     2
+--  Bob             |     2
+--  Sam Smith       |     1
+--  Jodie Whittaker |     0
+--  Jennifer Orwell |     2
+--  Melody Pond     |     3
+-- (6 rows)
+
+select                         
+*
+from ownership_count
+where count= ( select max(count) from ownership_count);
+
+--   fullname   | count 
+-- -------------+-------
+--  Melody Pond |     3
+-- (1 row)
