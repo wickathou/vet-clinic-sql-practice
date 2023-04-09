@@ -44,6 +44,23 @@ Day 3
   - List all animals owned by Dean Winchester that haven't tried to escape.
   - Who owns the most animals?
 
+Day 4
+
+<a href='./screenshots/day4/queries-day4-1.png' target='blank'>Task set 1<a>
+  - Who was the last animal seen by William Tatcher?
+  - How many different animals did Stephanie Mendez see?
+  - List all vets and their specialties, including vets with no specialties.
+  - List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+
+<a href='./screenshots/day4/queries-day4-2.png' target='blank'>Task set 2<a>
+  - What animal has the most visits to vets?
+  - Who was Maisy Smith's first visit?
+  - Details for most recent visit: animal information, vet information, and date of visit.
+  - How many visits were with a vet that did not specialize in that animal's species?
+
+<a href='./screenshots/day4/queries-day4-3.png' target='blank'>Task set 3<a>
+  - What specialty should Maisy Smith consider getting? Look for the species she gets the most.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
