@@ -61,6 +61,14 @@ Day 4
 <a href='./screenshots/day4/queries-day4-3.png' target='blank'>Task set 3<a>
   - What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 
+Peer programming day 1
+
+<a href='./screenshots/peer1/queries-day1.1-1.png' target='blank'>Task set 1<a>
+  - Optimize the query `SELECT COUNT(*) FROM visits where animal_id = 4;`
+
+<a href='./screenshots/peer1/queries-day1.1-2.png' target='blank'>Task set 2<a>
+  - Optimize the query `SELECT * FROM visits where vet_id = 2;`
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>

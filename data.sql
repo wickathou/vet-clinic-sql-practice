@@ -195,19 +195,14 @@ insert into owners (fullname, email) select 'Owner ' || generate_series(1,250000
 INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
 insert into owners (fullname, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
 
-explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+insert into owners (fullname, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
 
---                                                                QUERY PLAN                                                                
--- -----------------------------------------------------------------------------------------------------------------------------------------
---  Finalize Aggregate  (cost=65363.75..65363.76 rows=1 width=8) (actual time=285.266..289.449 rows=1 loops=1)
---    ->  Gather  (cost=65363.53..65363.74 rows=2 width=8) (actual time=285.175..289.443 rows=3 loops=1)
---          Workers Planned: 2
---          Workers Launched: 2
---          ->  Partial Aggregate  (cost=64363.53..64363.54 rows=1 width=8) (actual time=258.029..258.030 rows=1 loops=3)
---                ->  Parallel Seq Scan on visits  (cost=0.00..64357.46 rows=2429 width=0) (actual time=0.038..244.878 rows=359429 loops=3)
---                      Filter: (animal_id = 4)
---                      Rows Removed by Filter: 3234857
---  Planning Time: 0.195 ms
---  Execution Time: 289.493 ms
--- (10 rows)
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+insert into owners (fullname, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+insert into owners (fullname, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
 commit;
+
+
