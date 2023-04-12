@@ -64,3 +64,7 @@ create table visits (
 vet_id int references vets(id),
 animal_id int references animals(id)
 date_of_visit date);
+
+-- Day 1 - pair programming
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);

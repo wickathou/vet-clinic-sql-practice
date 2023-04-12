@@ -404,3 +404,34 @@ limit 1;
 --  Digimon |     6
 -- (1 row)
 
+-- Day 1 - Peer programming
+
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Execution Time: 473.440 ms
+
+-- Optimized
+create index animal_index on visits(animal_id)
+where animal_id=4;
+analyze;
+
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Execution Time: 135.103 ms
+
+
+explain analyze SELECT * FROM visits where vet_id = 2;
+-- Execution Time: 469.542 ms
+
+create index vet_index on visits(vet_id)
+where vet_id=2;
+analyze;
+explain analyze SELECT * FROM visits where vet_id = 2;
+-- Execution Time: 0.026 ms
+
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
+-- Execution Time: 6681.163 ms
+
+--optimized 
+create index owners_email on owners(email)
+where email = 'owner_18327@mail.com'
+explain SELECT email FROM owners where email = 'owner_18327@mail.com'
+-- Execution Time: 0.072 ms

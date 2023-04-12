@@ -8,7 +8,7 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Usage](#usage)
-  - [👥 Author ](#-author-)
+  - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -21,17 +21,18 @@
 **[Vet-Clinic]** is an implementation of PostgreSQL has been implemented to create a database of animals for a veterinarian clinic, along with a set of queries to look into the data stored in the database.
 
 **Screenshots**
-Day 1
+
+**Day 1**
 <a href='./screenshots/day1/queries.png' target='blank'>Task 1<a>
 
-Day 2
+**Day 2**
 <a href='./screenshots/day2/queries-day2-0.png' target='blank'>Task 0<a>
 <a href='./screenshots/day2/queries-day2-1.png' target='blank'>Task 1<a>
 <a href='./screenshots/day2/queries-day2-2.png' target='blank'>Task 2<a>
 <a href='./screenshots/day2/queries-day2-3.png' target='blank'>Task 3<a>
 <a href='./screenshots/day2/queries-day2-4.png' target='blank'>Task 4<a>
 
-Day 3
+**Day 3**
 
 <a href='./screenshots/day3/queries-day3-1.png' target='blank'>Task set 1<a>
   - What animals belong to Melody Pond?
@@ -44,7 +45,7 @@ Day 3
   - List all animals owned by Dean Winchester that haven't tried to escape.
   - Who owns the most animals?
 
-Day 4
+**Day 4**
 
 <a href='./screenshots/day4/queries-day4-1.png' target='blank'>Task set 1<a>
   - Who was the last animal seen by William Tatcher?
@@ -60,6 +61,17 @@ Day 4
 
 <a href='./screenshots/day4/queries-day4-3.png' target='blank'>Task set 3<a>
   - What specialty should Maisy Smith consider getting? Look for the species she gets the most.
+
+**Peer programming day 1**
+
+<a href='./screenshots/peer1/queries-day1.1-1.png' target='blank'>Task set 1<a>
+  - Optimize the query `SELECT COUNT(*) FROM visits where animal_id = 4;`
+
+<a href='./screenshots/peer1/queries-day1.1-2.png' target='blank'>Task set 2<a>
+  - Optimize the query `SELECT * FROM visits where vet_id = 2;`
+
+<a href='./screenshots/peer1/queries-day1.1-3.png' target='blank'>Task set 3<a>
+  - Optimize the query `SELECT * FROM owners where email = 'owner_18327@mail.com';`
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -98,7 +110,14 @@ In order to run this project you need:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
+
+**Ayo Moses**
+
+- GitHub: [@AyoMoses1](https://github.com/AyoMoses1)
+- Twitter: [@AyoMoses](https://twitter.com/Ayo_Moses1)
+- LinkedIn: [Ayo Moses](https://www.linkedin.com/in/ayomoses/)
+
 
 **Javier Hernandez**
 
