@@ -115,6 +115,9 @@ In order to run this project you need:
 **Ayo Moses**
 
 - GitHub: [@AyoMoses1](https://github.com/AyoMoses1)
+- Twitter: [@AyoMoses](https://twitter.com/Ayo_Moses1)
+- LinkedIn: [Ayo Moses](https://www.linkedin.com/in/ayomoses/)
+
 
 **Javier Hernandez**
 
