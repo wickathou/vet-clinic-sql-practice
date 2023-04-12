@@ -426,3 +426,12 @@ where vet_id=2;
 analyze;
 explain analyze SELECT * FROM visits where vet_id = 2;
 -- Execution Time: 0.026 ms
+
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
+-- Execution Time: 6681.163 ms
+
+--optimized 
+create index owners_email on owners(email)
+where email = 'owner_18327@mail.com'
+explain SELECT email FROM owners where email = 'owner_18327@mail.com'
+-- Execution Time: 0.072 ms
