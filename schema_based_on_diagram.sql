@@ -27,6 +27,33 @@ create table treatments (
   type varchar(150)
 );
 
+
+-- Invoices
+
+create table invoices (
+  id serial primary key,
+  total_amount decimal(10, 2),
+  generated_at timestamp,
+  payed_at timestamp,
+  medical_history_id int,
+  constraint fk_medical foreign key (medical_history_id)
+    references medical_histories(id)
+);
+
+-- Invoice Items
+
+create table invoice_items (
+  id serial primary key,
+  unit_price decimal(10, 2),
+  quantity int,
+  total_price decimal(10, 2),
+  invoice_id int,
+  treatment_id int,
+  constraint fk_treatment foreign key (treatment_id)
+    references treatments(id)
+);
+
+
 -- Join tables - Medical Histories and Treatments
 
 create table history_treatments (
